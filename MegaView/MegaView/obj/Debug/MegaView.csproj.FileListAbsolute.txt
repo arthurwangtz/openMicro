@@ -1,0 +1,1 @@
+C:\Repository\openMicro\src\openMicro\MegaView\MegaView\bin\Debug\MegaView.exe.config
