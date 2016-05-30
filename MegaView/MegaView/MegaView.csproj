@@ -35,6 +35,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="RibbonControlsLibrary, Version=4.0.0.11019, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -94,6 +95,28 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\camera_102.13173652695px_1151449_easyicon.net.png" />
+    <Resource Include="Resource\film_109.45026737968px_1151461_easyicon.net.png" />
+    <Resource Include="Resource\image_127.60099750623px_1151476_easyicon.net.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\brain_87.222506393862px_1200311_easyicon.net.png" />
+    <Resource Include="Resource\calendar_99.763455149502px_1200313_easyicon.net.png" />
+    <Resource Include="Resource\clock_96px_1200315_easyicon.net.png" />
+    <Resource Include="Resource\cogwheel_96px_1200318_easyicon.net.png" />
+    <Resource Include="Resource\diagram_96px_1200321_easyicon.net.png" />
+    <Resource Include="Resource\documentation_90.168797953964px_1200323_easyicon.net.png" />
+    <Resource Include="Resource\flag_82.618925831202px_1200327_easyicon.net.png" />
+    <Resource Include="Resource\flask_78.874680306905px_1200328_easyicon.net.png" />
+    <Resource Include="Resource\form_75.191815856777px_1200329_easyicon.net.png" />
+    <Resource Include="Resource\microscope_56.54025974026px_1200338_easyicon.net.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\camera_34.043912175649px_1151449_easyicon.net.png" />
+    <Resource Include="Resource\film_21.266832917706px_1151456_easyicon.net.png" />
+    <Resource Include="Resource\image_31.900249376559px_1151476_easyicon.net.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

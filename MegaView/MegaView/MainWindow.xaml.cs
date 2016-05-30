@@ -18,7 +18,7 @@ namespace MegaView
     /// <summary>
     /// MainWindow.xaml 的交互逻辑
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : Microsoft.Windows.Controls.Ribbon.RibbonWindow
     {
         public MainWindow()
         {
