@@ -1,42 +1,126 @@
-﻿<ribbon:RibbonWindow x:Class="MegaView.MainWindow"
+﻿<Fluent:RibbonWindow x:Class="MegaView.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:ribbon="clr-namespace:Microsoft.Windows.Controls.Ribbon;assembly=RibbonControlsLibrary"
-        Title="MainWindow"
-        x:Name="RibbonWindow"
-        Width="640" Height="480">
+        xmlns:Fluent="urn:fluent-ribbon"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        Title="MegaView"        
+        Height="768"
+        Width="1024"
+        MinWidth="80"
+        MinHeight="60"
+        mc:Ignorable="d"
+        Icon="pack://application:,,,/Resource/Logo.png"
+        WindowState="Normal">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="400"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Fluent:Ribbon Grid.ColumnSpan="2">
+            <!--Backstage-->
+            <Fluent:Ribbon.Menu>
+                <Fluent:Backstage>
+                    <Fluent:BackstageTabControl>
+                        <Fluent:Button Header="New Exam"/>
+                        <Fluent:Button Header="Open from library..."/>
+                        <Fluent:Button Header="Import..."/>
+                        <Fluent:Button Header="Export..."/>
+                        <Fluent:BackstageTabItem Header="Connect">
+                            <Grid>
+                                <TextBlock HorizontalAlignment="Left"
+                                               MinWidth="0"
+                                               TextWrapping="Wrap">
+                                        Choose your microscope model
+                                </TextBlock>
+                            </Grid>
+                        </Fluent:BackstageTabItem>
+                        <Fluent:BackstageTabItem Header="Configuration"/>
+                        
+                    </Fluent:BackstageTabControl>
+                </Fluent:Backstage>
+            </Fluent:Ribbon.Menu>
+            <!--Tabs-->
+            <Fluent:RibbonTabItem Header="Basic"  ReduceOrder="Capture,View,Analysis,Analysis" >
+                <Fluent:RibbonGroupBox Name="Capture" Header="Capture">
+                    <Fluent:Button Name="btnCapture" SizeDefinition="Large, Middle" Header="Capture" Icon="Resource\capture_small.png" LargeIcon="Resource\capture_large.png" />
+                    <Fluent:Button Name="btnFilm" SizeDefinition="Large, Middle" Header="Film" Icon="Resource\film_small.png" LargeIcon="Resource\film_large.png" />
+                    <Fluent:Button Name="btnPrescribeTimeLapse" SizeDefinition="Large, Middle" Header="Time-Lapse" Icon="Resource\clock_large.png" LargeIcon="Resource\clock_large.png" />
+                </Fluent:RibbonGroupBox>
+                <Fluent:RibbonGroupBox Name="View" Header="View">
+                    <Fluent:Button Name="btnLibrary" SizeDefinition="Large, Middle" Header="Library" Icon="Resource\library_small.png" LargeIcon="Resource\library_large.png" />
+                    <Fluent:Button Name="btnImport" SizeDefinition="Large, Middle" Header="Import" Icon="Resource\import_small.png" LargeIcon="Resource\import_large.png" />
+                    <Fluent:Button Name="btnExport" SizeDefinition="Large, Middle" Header="Export" Icon="Resource\export_small.png" LargeIcon="Resource\export_large.png" />
+                </Fluent:RibbonGroupBox>
+                <Fluent:RibbonGroupBox Name="Analysis" Header="Analysis">
+                    <Fluent:Button Name="btnFluorescenceCombine" SizeDefinition="Large, Large, Middle" Header="Fluorescence Combine" Icon="Resource\fluorescence_large.png" LargeIcon="Resource\fluorescence_large.png" />
+                    <Fluent:Button Name="btnCount" SizeDefinition="Large, Large, Middle" Header="Cell Counting" Icon="Resource\count_large.png" LargeIcon="Resource\count_small.png" />
+                    <Fluent:Button Name="btnMotion" SizeDefinition="Large, Large, Middle" Header="Motion Tracking" Icon="Resource\motion_large.png" LargeIcon="Resource\motion_small.png" />
+                    <Fluent:Button Name="btnSpectrum" SizeDefinition="Large, Middle, Middle" Header="Spectrum Analysis" Icon="Resource\spectro_small.png" LargeIcon="Resource\spectro_large.png" />
+                    <Fluent:Button Name="btnFocusStacking" SizeDefinition="Large, Middle, Middle" Header="Focus Stacking" Icon="Resource\focus_small.png" LargeIcon="Resource\focus_large.png" />
+                    <Fluent:Button Name="btnStitching" SizeDefinition="Large, Middle, Middle" Header="Image Stitching" Icon="Resource\stitch_small.png" LargeIcon="Resource\stitch_large.png" />
+                </Fluent:RibbonGroupBox>
+            </Fluent:RibbonTabItem>
+            <Fluent:RibbonTabItem Header="Application"  ReduceOrder="Capture,View,Analysis,Analysis" >
+                <Fluent:RibbonGroupBox Name="TimeLapseReport" Header="Time Lapse Report">
+                    <Fluent:Button Name="btnCellGrowth" SizeDefinition="Large, Middle" Header="Cell Growth Report" Icon="Resource\cell_growth_large.png" LargeIcon="Resource\cell_growth_large.png" />
+                    <Fluent:Button Name="btnDrugScreening" SizeDefinition="Large, Middle" Header="Drug Screening" Icon="Resource\drug_screening_large.png" LargeIcon="Resource\drug_screening_large.png" />
+                </Fluent:RibbonGroupBox>
+            </Fluent:RibbonTabItem>
+        </Fluent:Ribbon>
 
-    <Grid x:Name="LayoutRoot">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
+        <GroupBox x:Name="groupNavigation" Header="Navigation" HorizontalAlignment="Left" Margin="10,350,0,10" Width="375">
+            <Grid Margin="0,0,0,0">
+                <ListView x:Name="TimeSelector" HorizontalAlignment="Left" Margin="0,0,0,0" Width="120">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Time" Width="120"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+                <ListView x:Name="GroupSelector" HorizontalAlignment="Left" Margin="120,0,0,0" Width="120">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Group" Width="120"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+                <ListView x:Name="ChannelSelector" HorizontalAlignment="Left" Margin="240,0,0,0" Width="120">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Channel" Width="120"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </Grid>
+        </GroupBox>
+        <GroupBox x:Name="groupExamInfo" Header="Exam Information" HorizontalAlignment="Left" Margin="10,149,0,0" VerticalAlignment="Top" Height="196" Width="375">
+            <Grid Margin="0, 0, 0, 0" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="45"/>
+                    <RowDefinition Height="45"/>
+                    <RowDefinition Height="45"/>
+                    <RowDefinition Height="45"/>
+                </Grid.RowDefinitions>
+                <Label x:Name="lblExamName" Content="Exam Name" Grid.Column="0" Grid.Row="0" Margin="0,0,0,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
+                <TextBox Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="0" Margin="0,0,0,0" VerticalContentAlignment="Center" Height="30" VerticalAlignment="Center" />
+                <Label x:Name="lblGroupNumber" Content="GroupNumber" Grid.Column="0" Grid.Row="1" Margin="0,0,0,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
+                <Slider Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1" Margin="0,0,0,0" VerticalAlignment="Center"/>
+                <Label x:Name="lblChannelNumber" Content="ChannelNumber" Grid.Column="0" Grid.Row="2" Margin="0,0,0,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
+                <Slider Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="2" Margin="0,0,0,0" VerticalAlignment="Center"/>
+                <Button Grid.Column="0" Grid.Row="3" x:Name="btnNewExam" Content="New Exam" HorizontalAlignment="Center" VerticalAlignment="Center" Height="30" Width="110"/>
+                <Button Grid.Column="1" Grid.Row="3" x:Name="btnload" Content="Library..." HorizontalAlignment="Center" VerticalAlignment="Center" Height="30" Width="110"/>
+                <Button Grid.Column="2" Grid.Row="3" x:Name="btnUpdateExam" Content="Update" HorizontalAlignment="Center" VerticalAlignment="Center" Height="30" Width="110"/>
+            </Grid>
+        </GroupBox>
+        <Image x:Name="image" Grid.Column="1" Margin="10,149,10,10" Source="Resource/DemoImage.jpg" Cursor="Cross"/>
 
-        <ribbon:Ribbon x:Name="Ribbon" Title="Ribbon Title">
-            
-            <ribbon:Ribbon.ApplicationMenu>
-                <ribbon:RibbonApplicationMenu SmallImageSource="Resource/microscope_56.54025974026px_1200338_easyicon.net.png">
-                    <ribbon:RibbonApplicationMenuItem Header="MegaView"
-                                                      x:Name="MenuItem1"
-                                                      ImageSource="Resource/microscope_56.54025974026px_1200338_easyicon.net.png"/>
-                </ribbon:RibbonApplicationMenu>
-            </ribbon:Ribbon.ApplicationMenu>
-            <ribbon:RibbonTab x:Name="HomeTab" 
-                              Header="Home">
-                <ribbon:RibbonGroup x:Name="Group1" 
-                                    Header="Group1">
-                    <ribbon:RibbonButton x:Name="Button1"
-                                         LargeImageSource="Resource\camera_34.043912175649px_1151449_easyicon.net.png"
-                                         Label="Button1" />
-                    <ribbon:RibbonButton x:Name="Button2"
-                                         SmallImageSource="Resource\film_21.266832917706px_1151456_easyicon.net.png"
-                                         Label="Button2" />
-                    <ribbon:RibbonButton x:Name="Button3"
-                                         SmallImageSource="Resource\image_31.900249376559px_1151476_easyicon.net.png"
-                                         Label="Button3" />
 
-                </ribbon:RibbonGroup>
-            </ribbon:RibbonTab>
-        </ribbon:Ribbon>
     </Grid>
-</ribbon:RibbonWindow>
+
+</Fluent:RibbonWindow>

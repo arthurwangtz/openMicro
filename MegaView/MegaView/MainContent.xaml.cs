@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace MegaView
 {
     /// <summary>
-    /// MainWindow.xaml 的交互逻辑
+    /// MainContent.xaml 的交互逻辑
     /// </summary>
-    public partial class MainWindow : Fluent.RibbonWindow
+    public partial class MainContent : UserControl
     {
-        public MainWindow()
+        public MainContent()
         {
             InitializeComponent();
         }

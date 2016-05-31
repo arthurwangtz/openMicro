@@ -17,3 +17,12 @@ C:\Repository\openMicro\src\openMicro\MegaView\MegaView\bin\Debug\Microsoft.Wind
 C:\Repository\openMicro\src\openMicro\MegaView\MegaView\bin\Debug\Microsoft.Windows.Shell.xml
 C:\Repository\openMicro\src\openMicro\MegaView\MegaView\obj\Debug\MegaView.exe
 C:\Repository\openMicro\src\openMicro\MegaView\MegaView\obj\Debug\MegaView.pdb
+C:\Repository\openMicro\src\openMicro\MegaView\MegaView\obj\Debug\MainContent.g.cs
+C:\Repository\openMicro\src\openMicro\MegaView\MegaView\obj\Debug\MegaView_MarkupCompile.lref
+C:\Repository\openMicro\src\openMicro\MegaView\MegaView\bin\Debug\Fluent.dll
+C:\Repository\openMicro\src\openMicro\MegaView\MegaView\bin\Debug\ControlzEx.dll
+C:\Repository\openMicro\src\openMicro\MegaView\MegaView\bin\Debug\System.Windows.Interactivity.dll
+C:\Repository\openMicro\src\openMicro\MegaView\MegaView\bin\Debug\Fluent.pdb
+C:\Repository\openMicro\src\openMicro\MegaView\MegaView\bin\Debug\ControlzEx.pdb
+C:\Repository\openMicro\src\openMicro\MegaView\MegaView\obj\Debug\App.baml
+C:\Repository\openMicro\src\openMicro\MegaView\MegaView\obj\Debug\MainContent.baml

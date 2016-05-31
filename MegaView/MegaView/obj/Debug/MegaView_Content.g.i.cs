@@ -8,8 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resource/camera_34.043912175649px_1151449_easyicon.net.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resource/film_21.266832917706px_1151456_easyicon.net.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resource/image_31.900249376559px_1151476_easyicon.net.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resource/demoimage.jpg")]
 
 
